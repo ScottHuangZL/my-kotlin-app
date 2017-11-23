@@ -1,4 +1,4 @@
-#**Simple Kotlin-React-App Sample**
+# **Simple Kotlin-React-App Sample**
 
 ## The technologies used in this example  
 **Kotlin + React**   => To build the reactjs
@@ -9,7 +9,7 @@
 ## Examples  
 [Black-Jack(Fake Game)](src/App/Game/gameUI.kt)
 
-**Below 2 example been adopted as Kotlin Wrapper since Nov 22, 2017**
+**Below 2 examples have been adopted as Kotlin Wrapper since Nov 22, 2017**
 
 [To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) 
 
@@ -35,5 +35,5 @@ npm start
 1. You can git clone / download my repo to overwrite above "my-kotlin-app"
 The key contents in src & public folder.
 
-2. Or , tt should be work if you just clone my repo to your local machine and "npm start"
+2. Or , it should be work if you just clone my repo to your local machine and "npm start"
 it should be try download node_modules firstly and then auto open the web to show result
