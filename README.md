@@ -16,9 +16,9 @@
 [Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt)
 
 ## Example Pictures
-![Black-Jack](The picture link will provide later)
-![To-to](The picture link will provide later)
-![Tic-Tac-Toe](The picture link will provide later)
+![Black-Jack](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Blackjack.png)
+![To-do](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Todo.png)
+![Tic-Tac-Toe](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/TicTacToe.png)
 
 ## How to start a normal Kotlin-React-App:
 ###Install
