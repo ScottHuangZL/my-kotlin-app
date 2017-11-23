@@ -21,17 +21,17 @@
 ![Tic-Tac-Toe](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/TicTacToe.png)
 
 ## How to start a normal Kotlin-React-App:
-###Install
+### Install
 npm install -g create-react-kotlin-app
 
-###Create App
+### Create App
 create-react-kotlin-app my-kotlin-app
 
 cd my-kotlin-app
 
 npm start
 
-##How to use this example
+## How to use this example
 1. You can git clone / download my repo to overwrite above "my-kotlin-app"
 The key contents in src & public folder.
 
