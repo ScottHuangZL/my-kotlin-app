@@ -27,7 +27,6 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
             input(type = InputType.text, name = "itemText") {
                 key = "itemText"
 
-
                 attrs {
                     value = state.text
                     placeholder = "Input todo text here..."

@@ -1,5 +1,6 @@
 package ExampleApp
 
+import App.Product.product
 import App.TicTacToe.ticTacToe
 import App.Todo.todo
 import index.menu
@@ -13,7 +14,8 @@ interface AppState : RState {
     var selectedTab: String
 }
 
-val tabItems = arrayOf("Game", "Todo", "TicTacToe")
+val tabItems: Array<String>
+    get() = arrayOf("Game", "Todo", "TicTacToe","Product")
 
 class App : RComponent<RProps, AppState>() {
     override fun AppState.init() {
@@ -27,6 +29,7 @@ class App : RComponent<RProps, AppState>() {
                 ul {
                     for (eachTab in tabItems) {
                         li(classes = if (state.selectedTab == eachTab) "is-active" else "") {
+                            key = eachTab
                             a {
                                 +eachTab
                                 attrs {
@@ -68,14 +71,17 @@ class App : RComponent<RProps, AppState>() {
                     })
                     "Todo" -> todo()
                     "TicTacToe" -> ticTacToe()
+                    "Product" -> product()
                 }
             }
         }
     }
 
     override fun RBuilder.render() {
-        menu() //simple static Bulma css style menu.
+
         div(classes = "container") {
+            menu() //simple static Bulma css style menu.
+
             div {
                 br {}; br {}; br {}
                 ticker() // a default simple component to show ticker
@@ -85,12 +91,11 @@ class App : RComponent<RProps, AppState>() {
             tab() //build in react state to allow dynamic change contents
 
             for (i in 1..30) {
-                br { }
+                br {}
             }
             +"To make the scroll bar appear in right"  //just to check whether the menu bar will fix at top or not
 
         }
-
     }
 
 }

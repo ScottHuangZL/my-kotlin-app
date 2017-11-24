@@ -3,6 +3,7 @@
 package index
 
 import kotlinext.js.js
+import kotlinx.html.id
 import kotlinx.html.style
 import react.RBuilder
 import react.dom.*
@@ -10,12 +11,14 @@ import react.dom.*
 
 fun RBuilder.menu() {
     div(classes = "navbar is-fixed-top is-transparent") {
-        val id = "navbar"
+        attrs.id = "navbar"
+
         div(classes = "bd-special-shadow") {
-            val id = "specialShadow"
+            attrs.id = "specialShadow"
         }
         div(classes = "container") {
             div(classes = "navbar-brand") {
+                attrs.id = "navBrand"
                 a(classes = "navbar-item", href = "https://github.com/ScottHuangZL", target = "_blank") {
                     b {
                         +"Scott Huang"
@@ -32,11 +35,12 @@ fun RBuilder.menu() {
             }
 
             div(classes = "navbar-menu") {
-                val id = "navMenuIndex"
-
+                attrs.id = "navMenuIndex"
                 //----------nav bar start/left
                 div(classes = "navbar-start") {
+                    //one dropdown
                     div(classes = "navbar-item has-dropdown is-hoverable") {
+                        key = "dropdown1"
                         a(classes = "navbar-link", href = "#") {
                             +"Sample Menu 1"
                         }
@@ -44,30 +48,16 @@ fun RBuilder.menu() {
                             a(classes = "navbar-item", href = "#") {
                                 +"Overview"
                             }
+                            hr(classes = "navbar-divider") {}
                             a(classes = "navbar-item", href = "#") {
                                 +"Modifiers"
                             }
-
-
-                            hr(classes = "navbar-divider") {}
-
-
-                            a(classes = "navbar-item", href = "#") {
-                                p(classes = "is-size-6-desktop") {
-                                    strong {
-                                        +"0.6.1"
-                                    }
-                                }
-                                small {
-                                    a(classes = "bd-view-all-versions", href = "#") {
-                                        +"View all versions"
-                                    }
-                                }
-                            }
                         }
                     }
-
+                    //another dropdown
                     div(classes = "navbar-item has-dropdown is-hoverable") {
+                        key = "dropdown2"
+
                         a(classes = "navbar-link", href = "#") {
                             +"Sample Menu 2"
                         }
@@ -91,13 +81,13 @@ fun RBuilder.menu() {
                         }
                     }
                     //---------------
-                    a(classes = "navbar-item", href = "https://github.com/JetBrains/kotlin-wrappers",target = "_blank") {
+                    a(classes = "navbar-item", href = "https://github.com/JetBrains/kotlin-wrappers", target = "_blank") {
                         span(classes = "bd-emoji") {
                             +"⭐️"
                         }
                         +" Kotlin-Wrapper"
                     }
-                    a(classes = "navbar-item", href = "https://github.com/JetBrains/create-react-kotlin-app",target = "_blank") {
+                    a(classes = "navbar-item", href = "https://github.com/JetBrains/create-react-kotlin-app", target = "_blank") {
                         span(classes = "bd-emoji") {
                             +"❤️️"
                         }
@@ -108,9 +98,10 @@ fun RBuilder.menu() {
 
                 //----------nav bar end/right
                 div(classes = "navbar-end") {
+                    attrs.id = "navEnd"
                     a(classes = "navbar-item is-hidden-desktop-only", href = "https://github.com/ScottHuangZL", target = "_blank") {
                         span(classes = "icon") {
-                            attrs.style = js { color = "#333;" }
+                            attrs.style = js { color = "#333" }
                             i(classes = "fa fa-lg fa-github") {}
                         }
                     }
