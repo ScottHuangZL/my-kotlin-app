@@ -2,7 +2,7 @@
 
 package index
 
-import ExampleApp.app
+import App.app
 import react.dom.*
 import kotlin.browser.*
 import kotlinext.js.*

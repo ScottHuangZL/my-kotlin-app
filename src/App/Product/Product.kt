@@ -81,6 +81,10 @@ interface SearchBarProps : RProps {
 class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, RState>(props) {
     override fun RBuilder.render() {
         div {
+            b{
+                +"Thinking in react way"
+                br{}
+            }
             input(type = InputType.text, name = "filterText") {
                 attrs {
                     value = props.filterText

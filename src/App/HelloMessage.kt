@@ -1,4 +1,4 @@
-package ExampleApp.components
+package App
 
 import react.RBuilder
 import react.RComponent

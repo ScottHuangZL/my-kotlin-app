@@ -1,6 +1,6 @@
 @file:Suppress("UnsafeCastFromDynamic")
 
-package ExampleApp
+package App
 
 import kotlinx.html.js.onClickFunction
 import react.RBuilder

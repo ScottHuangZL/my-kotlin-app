@@ -1,6 +1,6 @@
 @file:Suppress("UnsafeCastFromDynamic")
 
-package ExampleApp
+package App
 
 import kotlinext.js.js
 import kotlinx.html.style

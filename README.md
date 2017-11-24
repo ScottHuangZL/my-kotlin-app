@@ -7,15 +7,17 @@
 
 
 ## Examples  
-[Black-Jack(Fake Game)](src/App/Game/gameUI.kt)
+[Black-Jack(Fake Game)](src/App/Game/Game/gameUI.kt)
 
-**Below 3 have been adopted as Kotlin Wrapper formal examples since Nov 22, 2017**
+**Below 2 have been adopted as Kotlin Wrapper formal examples since Nov 22, 2017**
 
 [To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) 
 
 [Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt)
 
-[Thingking-in-react example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Product.kt)
+
+And this one is under pull request:
+[Thingking-in-react example](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/Product/Product.kt)
 
 ## Example Pictures
 ![Black-Jack](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Blackjack.png)
