@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d279a9-7f75-48f8-8af1-b13ba08d8bb9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index/menu.kt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App/Game/HelloMessage.kt" afterPath="$PROJECT_DIR$/src/App/HelloMessage.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App/Game/Ticker.kt" afterPath="$PROJECT_DIR$/src/App/Ticker.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/App.kt" afterPath="$PROJECT_DIR$/src/App/App.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Game/buttonBar.kt" afterPath="$PROJECT_DIR$/src/App/Game/buttonBar.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Game/gameUI.kt" afterPath="$PROJECT_DIR$/src/App/Game/gameUI.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Game/handUI.kt" afterPath="$PROJECT_DIR$/src/App/Game/handUI.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Product/Product.kt" afterPath="$PROJECT_DIR$/src/App/Product/Product.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/index.kt" afterPath="$PROJECT_DIR$/src/index/index.kt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/App.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
@@ -118,6 +108,19 @@
               <folding>
                 <element signature="e#54#178#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="207">
+                <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -208,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/App/Product/ProductCategory.kt" />
         <option value="$PROJECT_DIR$/src/index/menu.kt" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/App/Game/buttonBar.kt" />
         <option value="$PROJECT_DIR$/src/App/TicTacToe/TicTacToe.kt" />
         <option value="$PROJECT_DIR$/src/App/HelloMessage.kt" />
@@ -217,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/App/menu.kt" />
         <option value="$PROJECT_DIR$/src/App/Product/Product.kt" />
         <option value="$PROJECT_DIR$/src/App/App.kt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -475,12 +478,12 @@
       <workItem from="1511416562369" duration="13186000" />
       <workItem from="1511435279092" duration="408000" />
       <workItem from="1511495031976" duration="20831000" />
-      <workItem from="1511531472309" duration="1538000" />
+      <workItem from="1511531472309" duration="1784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115576000" />
+    <option name="totallyTimeSpent" value="115822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -723,17 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="368">
-            <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index/index.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -853,6 +845,17 @@
             <element signature="e#54#275#0" expanded="true" />
             <element signature="n#!!block;n#tab#0;n#!!block;n#App#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="207">
+            <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

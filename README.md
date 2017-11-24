@@ -7,7 +7,7 @@
 
 
 ## Examples  
-[Black-Jack(Fake Game)](src/App/Game/Game/gameUI.kt)
+[Black-Jack(Fake Game)](src/App/Game/gameUI.kt)
 
 **Below 2 have been adopted as Kotlin Wrapper formal examples since Nov 22, 2017**
 
