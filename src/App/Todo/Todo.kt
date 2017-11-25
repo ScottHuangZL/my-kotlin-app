@@ -29,7 +29,7 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
 
                 attrs {
                     value = state.text
-                    placeholder = "Input todo text here..."
+                    placeholder = "Input todo zipCode here..."
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
                         setState {
@@ -46,7 +46,7 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
                         if (state.text.isNotEmpty()) {
                             setState {
                                 items += text
-                                text = ""  //clear the input text after add to list
+                                text = ""  //clear the input zipCode after add to list
                             }
                         }
                     }
@@ -54,7 +54,7 @@ class Todo(props: TodoProps) : RComponent<TodoProps, TodoState>(props) {
             }
 
 
-//            +state.text
+//            +state.zipCode
 
 
             h3 {

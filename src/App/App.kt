@@ -2,6 +2,7 @@
 
 package App
 
+import App.AxiosSearch.axiosSearch
 import App.Product.product
 import App.TicTacToe.ticTacToe
 import App.Todo.todo
@@ -18,12 +19,12 @@ interface AppState : RState {
 }
 
 val exampleItems: Array<String>
-    get() = arrayOf("Game", "Todo", "TicTacToe", "Product")
+    get() = arrayOf("Game", "Todo", "TicTacToe", "Product","AxiosSearch")
 
 class App : RComponent<RProps, AppState>() {
     override fun AppState.init() {
         g = "App Init State"
-        selectedExample = exampleItems[2]  //set to TicTacToe which is the main example
+        selectedExample = exampleItems[4]  //set to TicTacToe which is the main example
     }
 
 
@@ -76,6 +77,7 @@ class App : RComponent<RProps, AppState>() {
                     "Todo" -> todo()
                     "TicTacToe" -> ticTacToe()
                     "Product" -> product()
+                    "AxiosSearch" -> axiosSearch()
                 }
             }
         }
@@ -139,7 +141,7 @@ class App : RComponent<RProps, AppState>() {
                                 a(classes = "navbar-item", href = "#") {
                                     div(classes = "navbar-content") {
                                         p {
-                                            small(classes = "has-text-link") {
+                                            small(classes = "has-zipCode-link") {
                                                 +"14 Nov 2017"
                                             }
                                         }

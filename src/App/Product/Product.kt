@@ -57,7 +57,7 @@ fun RBuilder.productTable(products: Array<PRODUCT>, filterText: String, inStockO
                 }
                 lastCategory = it.category
 
-                //show the product per filter text and inStock flag
+                //show the product per filter zipCode and inStock flag
                 if (!(
                         (filterText.isNotEmpty() and !it.name.toUpperCase().contains(filterText.toUpperCase())) or
                                 (inStockOnly and !it.isStocked))
