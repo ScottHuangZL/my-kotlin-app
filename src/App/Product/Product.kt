@@ -9,12 +9,10 @@ package App.Product
  * Date: Nov 24, 2017
  */
 
-import kotlinext.js.js
-import kotlinx.html.InputType
-import kotlinx.html.js.onChangeFunction
-import kotlinx.html.js.onClickFunction
-import kotlinx.html.style
-import org.w3c.dom.HTMLInputElement
+import kotlinext.js.*
+import kotlinx.html.*
+import kotlinx.html.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
 
@@ -34,19 +32,19 @@ fun RBuilder.productRow(name: String, price: Double, isStocked: Boolean) {
                 +name
             else
                 span {
-                    attrs.style = js {
+                    attrs.jsStyle = js {
                         color = "red"
                     }
                     +name
                 }
         }
         td {
-            +"$${price.toString()}"
+            +"$$price"
         }
     }
 }
 
-fun RBuilder.productTable(products: Array<PRODUCT>, fiterText: String, inStockOnly: Boolean) {
+fun RBuilder.productTable(products: Array<PRODUCT>, filterText: String, inStockOnly: Boolean) {
     var lastCategory = ""
 
     table {
@@ -61,7 +59,7 @@ fun RBuilder.productTable(products: Array<PRODUCT>, fiterText: String, inStockOn
 
                 //show the product per filter text and inStock flag
                 if (!(
-                        (fiterText.isNotEmpty() and !it.name.toUpperCase().contains(fiterText.toUpperCase())) or
+                        (filterText.isNotEmpty() and !it.name.toUpperCase().contains(filterText.toUpperCase())) or
                                 (inStockOnly and !it.isStocked))
                         ) {
                     productRow(it.name, it.price, it.isStocked)
@@ -81,17 +79,13 @@ interface SearchBarProps : RProps {
 class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, RState>(props) {
     override fun RBuilder.render() {
         div {
-            b{
-                +"Thinking in react way"
-                br{}
-            }
             input(type = InputType.text, name = "filterText") {
                 attrs {
                     value = props.filterText
-                    placeholder = "Search product..."
+                    placeholder = "Search products"
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
-                        props.onChange(target.value)()//Take note of the two ()(), it is quite ugly, but have no choice
+                        props.onChange(target.value)()
                     }
                 }
             }
@@ -104,7 +98,7 @@ class SearchBar(props: SearchBarProps) : RComponent<SearchBarProps, RState>(prop
                         }
                     }
                 }
-                +"Only show in stock product?"
+                +"Show in-stock products only"
             }
         }
     }
@@ -115,7 +109,7 @@ fun RBuilder.searchBar(initialInStockOnly: Boolean,
                        handleFilterInputChange: (String) -> () -> Unit,
                        handleInStockInputClick: () -> () -> Unit
 ) = child(SearchBar::class) {
-    attrs.onClick = handleInStockInputClick() //take note to add () here
+    attrs.onClick = handleInStockInputClick()
     attrs.onChange = handleFilterInputChange
     attrs.inStockOnly = initialInStockOnly
     attrs.filterText = initialFilterText
@@ -132,7 +126,7 @@ interface ProductState : RState {
 
 data class PRODUCT(val category: String, val price: Double, val isStocked: Boolean, val name: String)
 
-var PRODUCTS = arrayOf(
+var products = arrayOf(
         PRODUCT("Sporting Goods", 49.9, true, "Football"),
         PRODUCT("Sporting Goods", 9.9, true, "Baseball"),
         PRODUCT("Sporting Goods", 29.9, false, "Basketball"),
@@ -143,7 +137,6 @@ var PRODUCTS = arrayOf(
 
 class Product(props: ProductProps) : RComponent<ProductProps, ProductState>(props) {
     override fun ProductState.init(props: ProductProps) {
-//        super.init()
         filterText = ""
         inStockOnly = false
     }
@@ -165,7 +158,7 @@ class Product(props: ProductProps) : RComponent<ProductProps, ProductState>(prop
             searchBar(state.inStockOnly, state.filterText,
                     { filterText: String -> handleFilterInputChange(filterText) },
                     { handleInStockInputClick() })
-            productTable(PRODUCTS, state.filterText, state.inStockOnly)
+            productTable(products, state.filterText, state.inStockOnly)
         }
     }
 }
