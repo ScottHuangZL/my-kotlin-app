@@ -8,7 +8,7 @@ package App.AxiosSearch
  * Date: Nov 25, 2017
  */
 
-import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.html.*
 import kotlinx.html.js.*
 import org.w3c.dom.HTMLInputElement
@@ -43,7 +43,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
     }
 
     private fun remoteSearchZip(zipCode: String) {
-        val config: AxiosConfigSettings = js {
+        val config: AxiosConfigSettings = jsObject {
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
