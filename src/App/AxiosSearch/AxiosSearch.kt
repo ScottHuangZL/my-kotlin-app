@@ -4,13 +4,11 @@ package App.AxiosSearch
 
 /**
  * An example to show how to leverage axios lib to fetch remote data by Scott_Huang@qq.com (Zhiliang.Huang@gmail.com)
- * (Btw, Vue.js formally leverage axios for ajax related works, so it should be good if React.js also use it)
  *
  * Date: Nov 25, 2017
  */
 
 import kotlinext.js.js
-
 import kotlinx.html.*
 import kotlinx.html.js.*
 import org.w3c.dom.HTMLInputElement
@@ -26,18 +24,49 @@ interface AxiosState : RState {
     var zipResult: ZipResult
 }
 
-// You need input correct axios.min.js link address in public\static\index.html
-// I personally download axios.min.js proactive in put it into public\static\js folder
-// <script src="%PUBLIC_URL%/static/js/axios.min.js"></script>
-// or you can put   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>     into index.html to avoid proactive download to local
-// And we provide a simple fun to wrap axios.js, it is not type safe, suggest JB team to provide a formal wrapping for this useful lib
-external fun axios(config: dynamic): dynamic
+//Per Hypnosphi advice, change to common js way.
+//you should need "npm install axios --save" in advance in your project folder
+@JsModule("axios")
+external fun axios(config: AxiosConfigSettings): dynamic
+
+//add simple type for this example
+external interface AxiosConfigSettings {
+    var url: String
+    var timeout: Number
+}
 
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
     override fun AxiosState.init(props: AxiosProps) {
         zipCode = ""
         zipResult = ZipResult("", "", "")
+    }
+
+    private fun remoteSearchZip(zipCode: String) {
+        val config: AxiosConfigSettings = js {
+            url = "http://ziptasticapi.com/" + zipCode
+            timeout = 3000
+        }
+        axios(config).then { response ->
+            setState {
+                zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
+            }
+        }.catch { error: dynamic ->
+            setState {
+                zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
+            }
+            console.log(error)
+        }
+    }
+
+    private fun handleChange(targetValue: String) {
+        setState {
+            zipCode = targetValue
+            zipResult = ZipResult("", "", "")
+        }
+        if (targetValue.length == 5) {
+            remoteSearchZip(targetValue)
+        }
     }
 
     override fun RBuilder.render() {
@@ -52,25 +81,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
                     title = infoText
                     onChangeFunction = {
                         val target = it.target as HTMLInputElement
-                        setState {
-                            zipCode = target.value
-                            zipResult = ZipResult("", "", "")
-                        }
-                        if (target.value.length == 5) {
-                            axios(js {
-                                url = "http://ziptasticapi.com/" + target.value
-                                timeout = 3000
-                            }).then({ response ->
-                                setState {
-                                    zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
-                                }
-                            }).catch(p0 = { error ->
-                                setState {
-                                    zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
-                                }
-                                console.log(error)
-                            })
-                        }
+                        handleChange(target.value)
                     }
                 }
             }
