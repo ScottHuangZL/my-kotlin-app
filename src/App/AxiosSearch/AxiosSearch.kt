@@ -8,6 +8,7 @@ package App.AxiosSearch
  * Date: Nov 25, 2017
  */
 
+import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.*
 import kotlinx.html.js.*
@@ -22,12 +23,14 @@ interface AxiosProps : RProps {
 interface AxiosState : RState {
     var zipCode: String
     var zipResult: ZipResult
+    var errorMessage: String
 }
 
 //Per Hypnosphi advice, change to common js way.
 //you should need "npm install axios --save" in advance in your project folder
 @JsModule("axios")
 external fun axios(config: AxiosConfigSettings): dynamic
+//external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 //add enhanced typing for axios
 external interface AxiosConfigSettings {
@@ -49,7 +52,7 @@ external interface AxiosConfigSettings {
     var onUploadProgress: dynamic
     var onDowndloadProgress: dynamic
     var maxContentLength: Number
-    var validateStatus: (Number)->Boolean
+    var validateStatus: (Number) -> Boolean
     var maxRedirects: Number
     var httpAgent: dynamic
     var httpsAgent: dynamic
@@ -61,18 +64,26 @@ external interface AxiosError {
     var message: String
 }
 
-external interface AxiosResponse {
-    var data: dynamic
-    var status: Number
-    var statusText: String
-    var headers: dynamic
-    var config: AxiosConfigSettings
+external interface AxiosResponse<T> {
+    val data: T
+    val status: Number
+    val statusText: String
+    val headers: dynamic
+    val config: AxiosConfigSettings
+}
+
+//just for this zip code search response data
+external interface Data {
+    val country: String
+    val state: String
+    val city: String
 }
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
     override fun AxiosState.init(props: AxiosProps) {
         zipCode = ""
         zipResult = ZipResult("", "", "")
+        errorMessage = ""
     }
 
     private fun remoteSearchZip(zipCode: String) {
@@ -80,9 +91,10 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
-        axios(config).then { response: AxiosResponse ->
+        axios(config).then { response: AxiosResponse<Data> ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
+                errorMessage = ""
             }
             console.log(response.status)
             console.log(response.statusText)
@@ -91,7 +103,8 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             console.log(response.data)
         }.catch { error: AxiosError ->
             setState {
-                zipResult = ZipResult("Find error:", error.message, ". Please open your console to learn detail")
+                zipResult = ZipResult("", "", "")
+                errorMessage = error.message
             }
             console.log(error.message)
             console.log(error)
@@ -102,6 +115,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
         setState {
             zipCode = targetValue
             zipResult = ZipResult("", "", "")
+            errorMessage = ""
         }
         if (targetValue.length == 5) {
             remoteSearchZip(targetValue)
@@ -128,7 +142,16 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             h1 {
                 +"zip code ${state.zipCode} detail result is: "
                 +"${state.zipResult.country} ${state.zipResult.state} ${state.zipResult.city} "
+                if (!state.errorMessage.isNullOrEmpty()) div {
+                    attrs.style = js {
+                        color = "red"
+                    }
+                    +"Find error: "
+                    +state.errorMessage
+                    +". Please open your console to learn detail"
+                }
             }
+
         }
     }
 }
