@@ -29,12 +29,45 @@ interface AxiosState : RState {
 @JsModule("axios")
 external fun axios(config: AxiosConfigSettings): dynamic
 
-//add simple type for this example
+//add enhanced typing for axios
 external interface AxiosConfigSettings {
     var url: String
+    var method: String  //get, post, head, delete, put, patch and so on.  The default is get if you not set any info
+    var baseUrl: String
     var timeout: Number
+    var data: dynamic
+    var transferRequest: dynamic
+    var transferResponse: dynamic
+    var headers: dynamic
+    var params: dynamic
+    var withCredentials: Boolean
+    var adapter: dynamic
+    var auth: dynamic
+    var responseType: String //defauls is json
+    var xsrfCookieName: String
+    var xsrfHeaderName: String
+    var onUploadProgress: dynamic
+    var onDowndloadProgress: dynamic
+    var maxContentLength: Number
+    var validateStatus: (Number)->Boolean
+    var maxRedirects: Number
+    var httpAgent: dynamic
+    var httpsAgent: dynamic
+    var proxy: dynamic
+    var cancelToken: dynamic
 }
 
+external interface AxiosError {
+    var message: String
+}
+
+external interface AxiosResponse {
+    var data: dynamic
+    var status: Number
+    var statusText: String
+    var headers: dynamic
+    var config: AxiosConfigSettings
+}
 
 class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props) {
     override fun AxiosState.init(props: AxiosProps) {
@@ -47,14 +80,20 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             url = "http://ziptasticapi.com/" + zipCode
             timeout = 3000
         }
-        axios(config).then { response ->
+        axios(config).then { response: AxiosResponse ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
             }
-        }.catch { error: dynamic ->
+            console.log(response.status)
+            console.log(response.statusText)
+            console.log(response.config)
+            console.log(response.headers)
+            console.log(response.data)
+        }.catch { error: AxiosError ->
             setState {
-                zipResult = ZipResult("", "", "Find error, please open your console to learn detail.")
+                zipResult = ZipResult("Find error:", error.message, ". Please open your console to learn detail")
             }
+            console.log(error.message)
             console.log(error)
         }
     }
