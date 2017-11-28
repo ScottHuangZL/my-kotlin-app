@@ -9,16 +9,15 @@
 ## Examples  
 [Black-Jack(Fake Game)](src/App/Game/gameUI.kt)
 
-**Below 3 have been adopted as Kotlin Wrapper formal examples since Nov 22, 2017**
+**Below 4 have been adopted as Kotlin Wrapper formal examples since Nov, 2017**
 
-[To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) 
+[To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) , This is a quite simple entry level example
 
-[Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt)
+[Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt) , An enhanced sample if compare to above todo example.
 
-[Thinking-in-react Product example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Product.kt)
+[Thinking-in-react Product example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Product.kt) , Another enhanced sample.
 
-This axios example under pull request: 
-[Axios-Search example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/AxiosSearch.kt)
+[Axios-Search example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/AxiosSearch.kt)  , This example tell you how to leverage axios network ability to empower your Kotlin-react app! Also tell you how to add typing for axios.
 
 
 ## Example Pictures

@@ -30,7 +30,6 @@ interface AxiosState : RState {
 //Per Hypnosphi advice, change to common js way.
 //you should need "npm install axios --save" in advance in your project folder
 @JsModule("axios")
-//external fun axios(config: AxiosConfigSettings): dynamic
 external fun <T> axios(config: AxiosConfigSettings): Promise<AxiosResponse<T>>
 
 //add enhanced typing for axios
