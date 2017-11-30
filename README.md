@@ -30,7 +30,7 @@ Follow these examples to learn how to start developing your React apps with Kotl
 ![Tic-Tac-Toe](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/TicTacToe.png)
 ![Thinking-in-react](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Product.png)
 ![Axios-Search](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/AxiosSearch.png)
-![Quill-Editor](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Quill.png)
+![Quill-Editor](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/QuillEditor.png)
 
 ## How to start a normal Kotlin-React-App:
 ### Install
