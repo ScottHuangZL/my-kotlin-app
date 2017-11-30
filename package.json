@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^2.13.10",
     "axios": "^0.17.1",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "react-dom": "^16.1.1",
+    "react-quill": "^1.2.2"
   },
   "devDependencies": {
     "react-scripts-kotlin": "2.0.10"

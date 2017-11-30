@@ -9,15 +9,19 @@
 ## Examples  
 [Black-Jack(Fake Game)](src/App/Game/gameUI.kt)
 
-**Below 4 have been adopted as Kotlin Wrapper formal examples since Nov, 2017**
+**Below 5 have been adopted as Kotlin Wrapper formal examples since Nov, 2017**
 
-[To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) , This is a quite simple entry level example
+1. [To-do list example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Todo.kt) 
 
-[Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt) , An enhanced sample if compare to above todo example.
+2. [Tic-Tac-Toe example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/TicTacToe.kt)
 
-[Thinking-in-react Product example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Product.kt) , Another enhanced sample.
+3. A port of "Thinking in React" [example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Product.kt)
 
-[Axios-Search example](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/AxiosSearch.kt)  , This example tell you how to leverage axios network ability to empower your Kotlin-react app! Also tell you how to add typing for axios.
+4. An [example of using axios](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/AxiosSearch.kt) to fetch remote data. It also demonstrates how to add typings for an external library.
+
+5. An [example of using Quill](https://github.com/JetBrains/kotlin-wrappers/blob/master/examples/src/main/kotlin/example/Quill.kt) that shows how to use an external React component.
+
+Follow these examples to learn how to start developing your React apps with Kotlin. Good luck and have fun! 
 
 
 ## Example Pictures
@@ -26,6 +30,7 @@
 ![Tic-Tac-Toe](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/TicTacToe.png)
 ![Thinking-in-react](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Product.png)
 ![Axios-Search](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/AxiosSearch.png)
+![Quill-Editor](https://github.com/ScottHuangZL/my-kotlin-app/blob/master/src/App/SamplePicture/Quill.png)
 
 ## How to start a normal Kotlin-React-App:
 ### Install

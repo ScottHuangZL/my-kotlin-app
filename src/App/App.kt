@@ -4,6 +4,7 @@ package App
 
 import App.AxiosSearch.axiosSearch
 import App.Product.product
+import App.Readme.quill
 import App.TicTacToe.ticTacToe
 import App.Todo.todo
 import kotlinx.html.id
@@ -19,12 +20,12 @@ interface AppState : RState {
 }
 
 val exampleItems: Array<String>
-    get() = arrayOf("Game", "Todo", "TicTacToe", "Product","AxiosSearch")
+    get() = arrayOf("QuillEditor", "Game", "Todo", "TicTacToe", "Product", "AxiosSearch")
 
 class App : RComponent<RProps, AppState>() {
     override fun AppState.init() {
         g = "App Init State"
-        selectedExample = exampleItems[4]  //set to TicTacToe which is the main example
+        selectedExample = exampleItems[0]  //set to TicTacToe which is the main example
     }
 
 
@@ -78,6 +79,8 @@ class App : RComponent<RProps, AppState>() {
                     "TicTacToe" -> ticTacToe()
                     "Product" -> product()
                     "AxiosSearch" -> axiosSearch()
+                    "QuillEditor" -> quill("" +
+                            "<p>A quill edit <b>example</b> <br> To show how to use external react component </>")
                 }
             }
         }
