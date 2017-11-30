@@ -49,3 +49,10 @@ The key contents in src & public folder.
 
 2. Or , it should be work if you just clone my repo to your local machine and "npm start"
 it should be try download node_modules firstly and then auto open the web to show result
+
+## How to upgrade to get latest react-scripts-kotlin in your project node module
+
+1. Search web and find: https://www.npmjs.com/package/react-scripts-kotlin
+    As for Nov 30, the latest version is 2.1.2
+    Update package.json with that new version.
+2.  npm i react-scripts-kotlin --save

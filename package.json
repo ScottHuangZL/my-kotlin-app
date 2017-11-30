@@ -7,10 +7,11 @@
     "axios": "^0.17.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-quill": "^1.2.2"
+    "react-quill": "^1.2.2",
+    "react-scripts-kotlin": "^2.1.2"
   },
   "devDependencies": {
-    "react-scripts-kotlin": "2.0.10"
+    "react-scripts-kotlin": "2.1.2"
   },
   "scripts": {
     "start": "react-scripts-kotlin start",

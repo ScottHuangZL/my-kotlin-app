@@ -89,7 +89,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             timeout = 3000
         }
         //First, you have to put the { response -> ... } lambda in parentheses, because it's not actually the last argument of then
-        axios<ZipData>(config).then({ response ->
+        axios<ZipData>(config).then{ response ->
             setState {
                 zipResult = ZipResult(response.data.country, response.data.state, response.data.city)
                 errorMessage = ""
@@ -99,7 +99,7 @@ class AxiosSearch(props: AxiosProps) : RComponent<AxiosProps, AxiosState>(props)
             console.log(response.config)
             console.log(response.headers)
             console.log(response.data)
-        }).catch { error ->
+        }.catch { error ->
             setState {
                 zipResult = ZipResult("", "", "")
                 // the Elvis operator is needed because `Throwable::message` is nullable
